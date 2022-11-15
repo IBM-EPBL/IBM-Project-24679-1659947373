@@ -1,0 +1,79 @@
+.App {
+  text-align: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  /* background: linear-gradient(55deg, #00ABFF 50%, #61C4F4 50%);  */
+}
+
+.form-paper{
+  padding: 20px;
+  height: 60vh;
+  width: 300px;
+  position: relative;
+  top: 80px;
+  left: 800px;
+}
+
+.addform-paper{
+  padding: 20px;
+  height: 60vh;
+  width: 300px;
+  position: relative;
+  top: 80px;
+  left: 450px;
+}
+
+.updateform-paper{
+  padding: 20px;
+  height: 60vh;
+  width: 300px;
+  position: relative;
+  top: 80px;
+  left: 450px;
+}
+
+.deleteform-paper{
+  padding: 20px;
+  height: 40vh;
+  width: 300px;
+  position: relative;
+  top: 80px;
+  left: 450px;
+}
+
+.inventory-paper{
+  padding: 20px;
+  height: 60vh;
+  width: 850px;
+  position: relative;
+  top: 80px;
+  left: 200px;
+}
+
+
+.form-icon{
+  background: rgb(27, 208, 162);
+}
+
+.form-title{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style:italic;
+  color: rgb(29, 232, 181);
+}
+
+.form-page{
+  background-image: url("/Inventory Background.png");
+  background-position: 1000px;
+  height: 100%;
+}
+
+.paragraph{
+  text-align: center;
+  justify-content: center;
+  font-size: x-large;
+}
+
+.emailcontact{
+  top: 20px;
+}
