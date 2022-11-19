@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg text-white bg-dark">
+      <a class="navbar-brand text-success" href="#">INVENTORY MANAGEMENT SYSTEM</a>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="#"> Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#about"> About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link text-white" href="#products">
+               Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Meeting</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a class="btn btn-outline-success my-2 my-sm-0" type="submit" href="/" >
+            Sign out
+          </a>
+        </form>
+      </div>
+    </nav>
+
+    <!-- navbar ends -->
+
+    <!-- jumbotron start -->
+    <div class="jumbotron ">
+      <h1 class="display-4">INVENTORY MANAGEMENT SYSTEM</h1>
+      <p class="lead">
+        IT Inventory Management is the process of identifying,
+        managing and maintaining the hardware and software assets of an organization. 
+        Manual compilation and reconciliation of IT assets is effort-intensive and error-prone.
+      </p>
+      <hr class="my-4" />
+      <p>
+        
+      </p>
+      <a class="btn btn-success btn-lg" href="#" role="button"
+        >Get Started</a
+      >
+    </div>
+
+    <!-- jumbotron end -->
+
+    <!-- feature section -->
+    <div class="bg-success text-center" id="products">
+      <p class="display-4 text-white p-4">PRODUCTS</p>
+      <p class="text-white">
+        identifying,
+        managing and maintaining
+      </p>
+      <div class="row  p-4">
+        <div class="col-6 text-right">
+
+          <button class="btn btn-warning btn-lg" onclick = "window.location.href = '/addproduct'">Add product</button>
+          
+        </div>
+        <button class="btn btn-warning btn-lg">Remove product</button>
+        <div class="col-6 text-center"></div>
+      </div>
+    </div>
+    <!-- feature section ends -->
+
+    <!-- get in touch section -->
+    <section class="contact bg-success ">
+      <div class="container ">
+        <div class="row">
+          {% for product in products %}
+          <div class="col-4">
+            <div class="card" style="width: 18rem;">
+              <img
+                src="{{product.image}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h4 class="card-title">{{product.productName}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{product.category}}</h6>
+                <p class="card-text">
+                  {{product.description}}
+                </p>
+                <h5 class="card-text">
+                  ${{product.price}}
+                </h5>
+                <h5 class="card-text">
+                  Quantity : {{product.quantity}}
+                </h5>
+                <a href="/removeproduct/{{product.productName}}" class="btn btn-success">Remove</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- get in touch section ends -->
+
+  </body>
+
+  <script>
+    function showAddModel (obj){
+      $("#addProductModel").modal("show");
+    }
+  </script>
+</html>
